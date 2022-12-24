@@ -1,0 +1,54 @@
+definitions:
+  models.UserModel:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /login/user/:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: UserModel JSON
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.UserModel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: json
+      summary: ping example
+      tags:
+      - example
+  /singup/user/:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: UserModel JSON
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.UserModel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: json
+      summary: ping example
+      tags:
+      - example
+swagger: "2.0"
